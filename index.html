@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Predicting Market Performance</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='images/bg.webp') }}") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">Predicting Market Performance</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="overlay">
+    <div>
+      <h1 class="display-4 fw-bold">Predicting Market Performance</h1>
+      <p class="lead">Today, forecasting the stock market has been one of the most challenging issues for the
+        ‘‘artificial intelligence’’ AI research community. Stock market investment methods are sophisticated and
+        rely on analyzing massive volumes of data. In recent years, machine-learning techniques have come under
+        increasing scrutiny to assess and improve market predictions over traditional approaches. The observation
+        in time is due to their dependence. Their predictions are crucial tasks in data mining and have attracted
+        great interest and considerable effort over the past decades. Tackling this challenge remains difficult due to
+        the inherent characteristics of time series data, including its high dimensionality, large volume of data, and
+        constant updates. Exploration of Machine Learning and Deep Learning methods undertaken to enhance the
+        effectiveness of conventional approaches. In this document, we aim precisely to forecast the performance of
+        the stock market at the close of the day by applying various machine-learning algorithms on the two data
+        sets ‘‘CoinMarketCap, CryptoCurrency’’ and thus analyze the predictions of the architectures.</p>
+      <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Login</a>
+      <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg">Register</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

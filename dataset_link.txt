@@ -1,0 +1,1 @@
+https://www.kaggle.com/datasets/rafat97/cryptocurrency-price-prediction-by-ieee-ensi-sb/data?utm_source=chatgpt.com&select=Train.csv

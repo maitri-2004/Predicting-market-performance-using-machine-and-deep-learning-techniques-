@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Predicting Market Performance{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6fa;
+        margin: 40px;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+    tr:hover {
+        background-color: #f2f8ff;
+    }
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+    }
+    .back-link:hover {
+        text-decoration: underline;
+    }
+    .json-data {
+        font-size: 0.85em;
+        color: #555;
+        white-space: pre-wrap;
+    }
+</style>
+</head>
+<body>
+<h1>{{ username }}'s Prediction History</h1>
+
+{% if predictions %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Predicted Value</th>
+            <th>Input Data</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in predictions %}
+        <tr>
+            <td>{{ row['id'] }}</td>
+            <td>{{ "%.4f"|format(row['predicted_value']) }}</td>
+            <td class="json-data">{{ row['input_data'] }}</td>
+            <td>{{ row['timestamp'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <p>No predictions found yet.</p>
+{% endif %}
+{% endblock %}

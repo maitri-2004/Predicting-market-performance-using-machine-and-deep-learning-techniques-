@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Predicting Market Performance{% endblock %}
+
+{% block content %}
+
+    <h1>Predict Cryptocurrency Close Price</h1>
+
+    <form method="POST">
+        {% for feature in features %}
+            <label for="{{ feature }}">{{ feature }}</label>
+            <input type="number" step="any" name="{{ feature }}" id="{{ feature }}" value="{{ values[feature] if values else '' }}" required>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            <h2>Predicted Close Price: {{ "%.4f"|format(prediction) }}</h2>
+        </div>
+    {% endif %}
+
+
+
+{% endblock %}
